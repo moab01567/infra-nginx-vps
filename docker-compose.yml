@@ -3,8 +3,10 @@ services:
     container_name: nginx-proxy
     image: nginx:stable
     ports:
-      - "127.0.0.1:8080:443"
+      - "443:443"
     volumes:
+      - ./crt/wrkspace.dev.crt:/crt/wrkspace.dev.crt
+      - ./crt/wrkspace.dev.pem:/crt/wrkspace.dev.pem
       - ./elite.conf:/etc/nginx/conf.d/elite.conf
       - ./project-overview.conf:/etc/nginx/conf.d/project-overview.conf
     networks:
