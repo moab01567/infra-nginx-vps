@@ -5,8 +5,8 @@ services:
     ports:
       - "127.0.0.1:8080:443"
     volumes:
-      - ./dev.elite.conf:/etc/nginx/conf.d/dev.elite.conf
-      - ./dev.project-overview.conf:/etc/nginx/conf.d/dev.project-overview.conf
+      - ./elite.conf:/etc/nginx/conf.d/elite.conf
+      - ./project-overview.conf:/etc/nginx/conf.d/project-overview.conf
     networks:
       - vps-network
 
