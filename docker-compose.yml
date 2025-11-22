@@ -18,6 +18,13 @@ services:
     networks:
       - vps-network
 
+  elite:
+    container_name: elite
+    image: moh080203/elite:latest
+    env_file:
+      - .elite.env
+    networks:
+      - vps-network
 
 networks:
   vps-network:
