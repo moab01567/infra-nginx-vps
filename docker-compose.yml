@@ -2,7 +2,6 @@ include:
   - path: ./elite/docker-compose.yml
   - path: ./event/docker-compose.yml
   - path: ./project-overview/docker-compose.yml
-  - path: ./gold/docker-compose.yml
 
 services:
   nginx-proxy:
@@ -15,7 +14,6 @@ services:
       - ./crt/wrkspace.dev.pem:/crt/wrkspace.dev.pem
       - ./elite/elite.conf:/etc/nginx/conf.d/elite.conf
       - ./event/event.conf:/etc/nginx/conf.d/event.conf
-      - ./gold/gold.conf:/etc/nginx/conf.d/gold.conf
       - ./project-overview/project-overview.conf:/etc/nginx/conf.d/project-overview.conf
     networks:
       - vps-network
