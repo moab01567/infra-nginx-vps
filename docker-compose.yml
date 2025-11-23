@@ -8,6 +8,7 @@ services:
       - ./crt/wrkspace.dev.crt:/crt/wrkspace.dev.crt
       - ./crt/wrkspace.dev.pem:/crt/wrkspace.dev.pem
       - ./elite.conf:/etc/nginx/conf.d/elite.conf
+      - ./event.conf:/etc/nginx/conf.d/event.conf
       - ./project-overview.conf:/etc/nginx/conf.d/project-overview.conf
     networks:
       - vps-network
