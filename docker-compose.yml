@@ -1,3 +1,8 @@
+include:
+  - path: ./elite/docker-compose.yml
+  - path: ./event/docker-compose.yml
+  - path: ./project-overview/docker-compose.yml
+
 services:
   nginx-proxy:
     container_name: nginx-proxy
@@ -7,33 +12,12 @@ services:
     volumes:
       - ./crt/wrkspace.dev.crt:/crt/wrkspace.dev.crt
       - ./crt/wrkspace.dev.pem:/crt/wrkspace.dev.pem
-      - ./elite.conf:/etc/nginx/conf.d/elite.conf
-      - ./event.conf:/etc/nginx/conf.d/event.conf
-      - ./project-overview.conf:/etc/nginx/conf.d/project-overview.conf
+      - ./elite/elite.conf:/etc/nginx/conf.d/elite.conf
+      - ./event/event.conf:/etc/nginx/conf.d/event.conf
+      - ./project-overview/project-overview.conf:/etc/nginx/conf.d/project-overview.conf
     networks:
       - vps-network
 
-  project-overview:
-    container_name: project-overview
-    image: moh080203/project-overview:latest
-    networks:
-      - vps-network
-
-  elite:
-    container_name: elite
-    image: moh080203/elite:latest
-    env_file:
-      - .elite.env
-    networks:
-      - vps-network
-
-  event:
-    container_name: event
-    image: moh080203/event:latest
-    env_file:
-      - .event.env
-    networks:
-      - vps-network
 
 networks:
   vps-network:

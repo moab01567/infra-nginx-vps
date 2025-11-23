@@ -1,0 +1,6 @@
+services:
+  project-overview:
+    container_name: project-overview
+    image: moh080203/project-overview:latest
+    networks:
+      - vps-network
