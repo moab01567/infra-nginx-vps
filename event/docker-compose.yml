@@ -1,0 +1,8 @@
+services:
+  event:
+    container_name: event
+    image: moh080203/event:latest
+    env_file:
+      - .event.env
+    networks:
+      - vps-network

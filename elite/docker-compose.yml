@@ -1,0 +1,8 @@
+services:
+  elite:
+    container_name: elite
+    image: moh080203/elite:latest
+    env_file:
+      - .elite.env
+    networks:
+      - vps-network
