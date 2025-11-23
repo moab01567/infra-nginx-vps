@@ -19,5 +19,6 @@ jobs:
           script: |
             cd infra 
             git pull
+            docker compose down
             docker compose up --build -d
             
