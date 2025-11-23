@@ -1,0 +1,8 @@
+services:
+  event:
+    container_name: gold-frontend
+    image: moh080203/gold-frontend:latest
+    env_file:
+      - .gold.env
+    networks:
+      - vps-network
