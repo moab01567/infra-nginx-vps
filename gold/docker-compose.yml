@@ -7,4 +7,23 @@ services:
     networks:
       - vps-network
 
+  gold-backend:
+    restart: always
+    container_name: gold-backend
+    image: moh080203/gold-backend:latest
+    env_file:
+      - .gold.env
+    networks:
+      - vps-network
+    depends_on:
+      - database
 
+  database:
+    image: mysql:8.4.0
+    container_name: gold-database
+    env_file:
+      - ./.gold.env
+    environment:
+      MYSQL_DATABASE: gold_store
+    networks:
+      - vps-network
