@@ -3,7 +3,6 @@ include:
   - path: ./event/docker-compose.yml
   - path: ./project-overview/docker-compose.yml
   - path: ./gold/docker-compose.yml
-  - path: ./schibsted/docker-compose.yml
 
 services:
   nginx-proxy:
@@ -18,7 +17,6 @@ services:
       - ./event/event.conf:/etc/nginx/conf.d/event.conf
       - ./gold/gold.conf:/etc/nginx/conf.d/gold.conf
       - ./project-overview/project-overview.conf:/etc/nginx/conf.d/project-overview.conf
-      - ./schibsted/schibsted.conf :/etc/nginx/conf.d/schibsted.conf
     networks:
       - vps-network
 
