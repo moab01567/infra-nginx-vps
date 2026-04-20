@@ -1,0 +1,6 @@
+services:
+  schibsted:
+    container_name: schibsted
+    image: moh080203/schibsted:latest
+    networks:
+      - vps-network
