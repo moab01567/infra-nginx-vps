@@ -1,0 +1,6 @@
+services:
+  sendy-b:
+    container_name: sendy-b
+    image: moh080203/sendy-b:1.0.0
+    networks:
+      - vps-network
