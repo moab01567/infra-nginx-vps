@@ -5,6 +5,7 @@ include:
   - path: ./gold/docker-compose.yml
   - path: ./sendy-b/docker-compose.yml
   - path: ./schibsted/docker-compose.yml
+  - path: ./instabox/docker-compose.yml
 
 services:
   nginx-proxy:
@@ -20,6 +21,7 @@ services:
       - ./gold/gold.conf:/etc/nginx/conf.d/gold.conf
       - ./project-overview/project-overview.conf:/etc/nginx/conf.d/project-overview.conf
       - ./sendy-b/sendy-b.conf:/etc/nginx/conf.d/sendy-b.conf
+      - ./instabox/instabox.conf:/etc/nginx/conf.d/instabox.conf
       - ./schibsted/schibsted.conf:/etc/nginx/conf.d/schibsted.conf
     networks:
       - vps-network

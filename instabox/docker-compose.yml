@@ -1,0 +1,8 @@
+services:
+  instabox:
+    container_name: instabox
+    image: moh080203/instabox:latest
+    networks:
+      - vps-network
+    volumes:
+      - instabox/instabee.db:/app/resources/instabee.db
