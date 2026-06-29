@@ -5,4 +5,6 @@ services:
     networks:
       - vps-network
     volumes:
-      - instabox/instabee.db:/app/resources/instabee.db
+      - ./instabee.db:/app/resources/instabee.db
+    env_file:
+      - .env
